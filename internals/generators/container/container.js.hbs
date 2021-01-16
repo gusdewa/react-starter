@@ -1,0 +1,22 @@
+import React, { useState, useEffect } from 'react';
+import { useTranslate } from 'hooks';
+import { Wrapper } from './styles';
+
+function {{ properCase name }}() {
+  const [yourAwesomeState, setyourAwesomeState] = useState('{{ upperCase name }}');
+  const trans = useTranslate('app.containers.{{ properCase name }}');
+
+  useEffect(() => {
+    // Any logic during componentDidMount / state change
+  }, []);
+
+  return (
+    <Wrapper>
+      <span>Container {trans('Key', '{{ properCase name }}')}</span>
+      <span>State: {yourAwesomeState}</span>
+      <button type='button' onClick={() => setyourAwesomeState('Change Me')}>Change Me</button>
+    </Wrapper>
+  );
+}
+
+export default {{ properCase name }};

@@ -1,0 +1,20 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import { useTranslate } from 'hooks';
+import { Wrapper } from './styles';
+
+function {{ properCase name }}() {
+  const trans = useTranslate('app.components.{{ properCase name }}');
+  return (
+    <Wrapper>
+      <span>Component {{ properCase name }}</span>
+      {trans('Key', '{{ properCase name }} anything')}
+    </Wrapper>
+  );
+}
+
+{{ properCase name }}.propTypes = {
+  // Put props validation here
+};
+
+export default {{ properCase name }};

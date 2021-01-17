@@ -1,3 +1,3 @@
 # Usage
 
-Style-related helpers. 
+Style-related helpers.

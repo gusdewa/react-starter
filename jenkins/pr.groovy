@@ -15,7 +15,7 @@ pipeline {
       steps {
         // NPM Config
         sh 'chown -R $(whoami) ~/.npm'
-        sh 'npm config set registry https://cicd-jfrog.petrosea.co.id/artifactory/api/npm/repo-npm-dmp/ -g'
+        sh 'npm config set registry https://cicd-jfrog.domain.co.id/artifactory/api/npm/repo-npm-dmp/ -g'
         sh 'npm config set strict-ssl false -g'
       }
     }

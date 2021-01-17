@@ -84,9 +84,9 @@ module.exports = require('./webpack.base.babel')({
     }),
 
     new WebpackPwaManifest({
-      name: 'Klop WebApp',
-      short_name: 'klop',
-      description: 'Klop WebApp project!',
+      name: 'anyname WebApp',
+      short_name: 'anyname',
+      description: 'anyname WebApp project!',
       background_color: '#fafafa',
       theme_color: '#b1624d',
       inject: true,

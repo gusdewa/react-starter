@@ -65,7 +65,7 @@ function checkIfRepositoryIsAClone() {
         .split(/\r?\n/)
         .map(line => line.trim())
         .filter(line => line.startsWith('origin'))
-        .filter(line => /ts-klop\/ts-klop\.git/.test(line))
+        .filter(line => /ts-anyname\/ts-anyname\.git/.test(line))
         .length;
 
       resolve(!!isClonedRepo);

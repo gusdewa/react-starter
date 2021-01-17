@@ -27,7 +27,7 @@ pipeline {
       steps {
         // NPM Config
         sh 'chown -R $(whoami) ~/.npm'
-        sh 'npm config set registry https://cicd-jfrog.telkomsel.co.id/artifactory/api/npm/repo-npm-dmp/ -g'
+        sh 'npm config set registry https://cicd-jfrog.petrosea.co.id/artifactory/api/npm/repo-npm-dmp/ -g'
         sh 'npm config set strict-ssl false -g'
         sh 'printenv'
       }
@@ -38,17 +38,17 @@ pipeline {
         sh 'rm -Rf ./node_modules'
         sh 'npm install --silent'
         sh 'npm run build --silent'
-        sh "docker build . -t klop-webapp:${VERSION} --quiet"
-        sh "docker tag klop-webapp:${VERSION} docker.cicd-jfrog.telkomsel.co.id:443/klop-webapp:${VERSION}"
+        sh "docker build . -t anyname-webapp:${VERSION} --quiet"
+        sh "docker tag anyname-webapp:${VERSION} docker.cicd-jfrog.petrosea.co.id:443/anyname-webapp:${VERSION}"
       }
     }
     stage('Put into artifact') {
       steps {
         // JFROG-DOCKER
         withCredentials([string(credentialsId: 'jfrog-docker-password', variable: 'PASSWORD')]) {
-            sh "docker login -u 19335063 -p ${PASSWORD} docker.cicd-jfrog.telkomsel.co.id:443"
+            sh "docker login -u 19335063 -p ${PASSWORD} docker.cicd-jfrog.petrosea.co.id:443"
         }
-        sh "docker push docker.cicd-jfrog.telkomsel.co.id:443/klop-webapp:${VERSION}"
+        sh "docker push docker.cicd-jfrog.petrosea.co.id:443/anyname-webapp:${VERSION}"
       }
     }
   }
